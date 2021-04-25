@@ -48,50 +48,6 @@ const setInfo = (index) => {
 };
 
 
-const prev = document.querySelector("#prev");
-const next = document.querySelector("#next");
-const prevMobile = document.querySelector('#mobileSliderPrev')
-const nextMobile = document.querySelector("#mobileSliderNext");
-
-nextMobile.addEventListener('click', () => {
-	if (currentIndex === info.length - 1) {
-		currentIndex = 0;
-	} else {
-		currentIndex += 1;
-	}
-	setInfo(currentIndex);
-	setActiveCircle(circles,circles[currentIndex])
-});
-prevMobile.addEventListener('click', () => {
-	if (currentIndex === 0) {
-		currentIndex = info.length - 1;
-	} else {
-		currentIndex -= 1;
-	}
-	setInfo(currentIndex);
-	setActiveCircle(circles,circles[currentIndex])
-});
-
-next.addEventListener('click', () => {
-	if (currentIndex === info.length - 1) {
-		currentIndex = 0;
-	} else {
-		currentIndex += 1;
-	}
-	setInfo(currentIndex);
-	setActiveCircle(circles,circles[currentIndex])
-});
-prev.addEventListener('click', () => {
-	if (currentIndex === 0) {
-		currentIndex = info.length - 1;
-	} else {
-		currentIndex -= 1;
-	}
-	setInfo(currentIndex);
-	setActiveCircle(circles,circles[currentIndex])
-});
-
-
 const setActiveCircle=(circles,circle)=>{
     circles.forEach((circle)=>{
         circle.classList.remove("circle-white")
@@ -116,4 +72,34 @@ link.forEach(function(element,i){
     })
 });
 
+const prev = document.querySelector("#prev");
+const next = document.querySelector("#next");
+const prevMobile = document.querySelector('#mobileSliderPrev')
+const nextMobile = document.querySelector("#mobileSliderNext");
+
+setNextSlide = () => {
+    if (currentIndex === info.length - 1) {
+		currentIndex = 0;
+	} else {
+		currentIndex += 1;
+	}
+	setInfo(currentIndex);
+	setActiveCircle(circles,circles[currentIndex])
+};
+
+setPrevSlide = () => {
+	if (currentIndex === 0) {
+		currentIndex = info.length - 1;
+	} else {
+		currentIndex -= 1;
+	}
+	setInfo(currentIndex);
+	setActiveCircle(circles,circles[currentIndex])
+};
+
+nextMobile.addEventListener('click', setNextSlide);
+prevMobile.addEventListener('click', setPrevSlide);
+
+next.addEventListener('click', setNextSlide);
+prev.addEventListener('click', setPrevSlide);
 

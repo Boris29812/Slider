@@ -6,11 +6,24 @@
 
 .section-projects {
     background-color: black;
-    height: 1074px;
+    height: 783px;
 }
 
 .container-projects {  
     height: 83px;   
+}
+
+.title {
+    font-family: Yeseva One;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.text {
+    font-style: normal;
+    font-weight: normal;
+    font-family: Nunito Sans;
 }
 
 .projects-navigation {
@@ -43,6 +56,7 @@
 } 
 .active {
     color: #E3B873;
+    text-decoration: underline;
 }
 
 .completed-projects {
@@ -56,6 +70,12 @@
     color: #E3B873;
     width: 253px;
     height: 66px;
+    margin-bottom: 34px;
+}
+
+.completed-projects_title::after{
+    content: url(Rectangle.svg);
+    margin-left: 34px;
 }
 
 .completed-projects_text {
@@ -63,6 +83,7 @@
     line-height: 27px;
     width: 442px;
     height: 86px;
+    color: white;
 }
 
 .completed-projects_image {
@@ -76,6 +97,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.4s;
 }
 
 button{
@@ -87,11 +109,12 @@ button{
 .completed-projects_info {
     display: flex;
     flex-wrap: wrap;
-    height: 200px;  
+    height: 208px;  
+    margin-top: 42px;
 }
 
 .completed-projects_info__block {
-    width: 200px;  
+    width: 202px;  
 }
 
 .completed-projects_info_item {
@@ -111,7 +134,6 @@ button{
     justify-content: space-between;
     width: 180px;
     margin-left: 137px;
-    margin-top: 86px;
     align-items: center;
 }
 
@@ -159,6 +181,10 @@ button{
         padding-left: 18px;
         padding-right: 18px;
     }
+
+    .completed-projects_title::after{
+        display: none;
+    }
     
     .completed-projects_info {
         width: 270px;   
@@ -171,7 +197,7 @@ button{
         margin: unset;
         width: 280px;
         height: 284px;
-        background-image: url('../image/image7.png');
+        background-image: url('imageForSlider1.png');
         background-repeat: no-repeat;
         background-size: contain;
     }
@@ -193,6 +219,7 @@ button{
         font-size: 11px;
         line-height: 158.48%;
         text-align: center;
+        width: auto;
     }
 
     .completed-projects_info_item {
